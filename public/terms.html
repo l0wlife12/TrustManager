@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0B" />
+  <meta name="robots" content="index, follow" />
+  <title>Conditions d'utilisation · TrustManager</title>
+  <meta name="description" content="Conditions d'utilisation TrustManager — plans, facturation, remboursements, responsabilités. FR · EN · ES." />
+  <link rel="canonical" href="https://trustmanager.app/terms" />
+  <meta property="og:title" content="Conditions d'utilisation · TrustManager" />
+  <meta property="og:description" content="Plans, facturation, remboursements, responsabilités. Version 2026.2." />
+  <meta property="og:url" content="https://trustmanager.app/terms" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0B;
+      --bg-elev: #121214;
+      --bg-card: #17171A;
+      --border: rgba(255,255,255,0.08);
+      --text: #E8E8EA;
+      --text-dim: #94949B;
+      --text-muted: #64646B;
+      --accent: #007AFF;
+      --accent-soft: rgba(0,122,255,0.12);
+      --warn: #FF9F0A;
+      --warn-soft: rgba(255,159,10,0.12);
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FAFAFA;
+        --bg-elev: #FFFFFF;
+        --bg-card: #FFFFFF;
+        --border: rgba(0,0,0,0.08);
+        --text: #0A0A0B;
+        --text-dim: #48484A;
+        --text-muted: #8E8E93;
+        --accent-soft: rgba(0,122,255,0.08);
+        --warn-soft: rgba(255,159,10,0.10);
+      }
+    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.65; font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .topbar { position: sticky; top: 0; z-index: 50; background: rgba(10,10,11,0.82); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); border-bottom: 1px solid var(--border); }
+    @media (prefers-color-scheme: light) { .topbar { background: rgba(255,255,255,0.82); } }
+    .topbar-inner { max-width: 880px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--text); }
+    .brand-dot { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%); display: grid; place-items: center; color: white; font-size: 13px; font-weight: 800; }
+    .lang-picker { display: flex; gap: 4px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 3px; }
+    .lang-picker button { background: transparent; color: var(--text-muted); border: none; padding: 6px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; cursor: pointer; transition: all 150ms ease; min-height: 32px; }
+    .lang-picker button.active { background: var(--accent); color: white; }
+    .lang-picker button:not(.active):hover { color: var(--text); background: var(--bg-elev); }
+
+    main { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+    .hero h1 { font-size: clamp(28px, 6vw, 40px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 10px; }
+    .hero .meta { color: var(--text-muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 22px; }
+
+    .warn-banner {
+      background: var(--warn-soft);
+      border: 1px solid rgba(255,159,10,0.3);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .warn-banner .icon { flex-shrink: 0; color: var(--warn); font-size: 20px; }
+    .warn-banner p { color: var(--text); font-size: 14.5px; line-height: 1.55; }
+
+    section.doc { margin-top: 32px; }
+    section.doc h2 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    section.doc h3 { font-size: 14px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin: 18px 0 8px; }
+    section.doc p { color: var(--text-dim); font-size: 15px; margin-bottom: 12px; }
+    section.doc ul { margin: 8px 0 14px 22px; color: var(--text-dim); font-size: 15px; }
+    section.doc li { margin-bottom: 6px; line-height: 1.6; }
+    section.doc strong { color: var(--text); font-weight: 600; }
+
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 12px 0 18px; }
+    .plan-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+    .plan-card .name { font-weight: 600; color: var(--text); font-size: 14px; margin-bottom: 4px; }
+    .plan-card .price { color: var(--accent); font-weight: 700; font-size: 16px; }
+    .plan-card .annual { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+
+    .contact { margin-top: 48px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
+    .contact h3 { font-size: 16px; color: var(--text); margin-bottom: 8px; text-transform: none; letter-spacing: 0; font-weight: 600; }
+    .contact a.btn { display: inline-block; margin-top: 12px; background: var(--accent); color: white; padding: 11px 22px; border-radius: 10px; font-weight: 600; font-size: 14px; min-height: 44px; line-height: 22px; }
+    .contact a.btn:hover { text-decoration: none; opacity: 0.92; }
+
+    footer { max-width: 720px; margin: 40px auto 0; padding: 20px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12.5px; text-align: center; }
+    footer a { color: var(--text-muted); margin: 0 8px; }
+
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+
+    @media (max-width: 540px) {
+      main { padding: 24px 16px 60px; }
+      .brand span:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="https://trustmanager.app" class="brand" aria-label="TrustManager">
+      <span class="brand-dot">T</span>
+      <span>TrustManager</span>
+    </a>
+    <div class="lang-picker" role="tablist" aria-label="Language">
+      <button data-lang-btn="fr" class="active">FR</button>
+      <button data-lang-btn="en">EN</button>
+      <button data-lang-btn="es">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════ FR ═══════════════════ -->
+<article data-lang="fr" class="active">
+  <div class="hero">
+    <h1>Conditions d'utilisation</h1>
+    <div class="meta">
+      <span>Version 2026.2</span><span>·</span><span>Dernière mise à jour : 10 avril 2026</span>
+    </div>
+  </div>
+
+  <div class="warn-banner">
+    <div class="icon">⚠️</div>
+    <p>En accédant ou en utilisant TrustManager, vous acceptez d'être lié par les présentes conditions. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le service.</p>
+  </div>
+
+  <section class="doc">
+    <h2>1. Parties</h2>
+    <p><strong>Prestataire :</strong> TrustManager (« nous »)<br>
+    <strong>Client :</strong> toute personne ou organisation utilisant le service</p>
+    <p>Les présentes conditions sont régies par les lois applicables dans votre pays de résidence. Pour les utilisateurs au Québec (Canada), elles sont régies par le droit québécois et canadien, et tout litige relève des tribunaux compétents au Québec.</p>
+  </section>
+
+  <section class="doc">
+    <h2>2. Description du service</h2>
+    <p>TrustManager est une plateforme SaaS de gestion d'équipe proposant : pointage avec géolocalisation et photo, gestion de la paie, facturation, calendrier d'équipe et assistant IA.</p>
+    <p>TrustManager est un outil technologique. Il ne constitue pas un conseil juridique, comptable ou fiscal. L'employeur demeure seul responsable de la conformité avec les lois du travail et les obligations fiscales applicables.</p>
+  </section>
+
+  <section class="doc">
+    <h2>3. Abonnement et paiement</h2>
+    <p>Plans et tarifs (en CAD, taxes en sus) :</p>
+    <div class="plans-grid">
+      <div class="plan-card"><div class="name">Starter</div><div class="price">29 $/mois</div><div class="annual">24 $/mois annuel</div></div>
+      <div class="plan-card"><div class="name">Pro</div><div class="price">69 $/mois</div><div class="annual">57 $/mois annuel</div></div>
+      <div class="plan-card"><div class="name">Business</div><div class="price">149 $/mois</div><div class="annual">124 $/mois annuel</div></div>
+      <div class="plan-card"><div class="name">Enterprise</div><div class="price">299 $/mois</div><div class="annual">249 $/mois annuel</div></div>
+    </div>
+    <p>Membres supplémentaires au-delà de la limite du plan : <strong>3 $/membre/mois</strong>.</p>
+    <ul>
+      <li>Renouvellement automatique à la fin de chaque période de facturation, jusqu'à annulation.</li>
+      <li>L'annulation prend effet à la fin de la période en cours.</li>
+      <li>Pour les abonnements annuels, le renouvellement automatique peut être désactivé dans les paramètres du compte au moins 24 heures avant la date de renouvellement.</li>
+    </ul>
+    <h3>Période d'essai</h3>
+    <p>Les plans Pro et Business bénéficient d'une période d'essai gratuite de 30 jours. Une carte de crédit valide est requise. Aucun montant n'est prélevé pendant la période d'essai. À la fin de l'essai, l'abonnement démarre automatiquement au tarif du plan sélectionné, sauf annulation préalable.</p>
+  </section>
+
+  <section class="doc">
+    <h2>4. Politique de remboursement</h2>
+    <h3>Aucun remboursement — règle générale</h3>
+    <p>Les abonnements sont non remboursables une fois la période de facturation débutée. En souscrivant, vous reconnaissez avoir été informé de cette politique et l'acceptez.</p>
+    <h3>Exceptions légales obligatoires</h3>
+    <p>Nonobstant ce qui précède, nous respectons les droits légaux de remboursement applicables dans votre pays de résidence, notamment :</p>
+    <ul>
+      <li><strong>Québec (Canada) :</strong> si nous n'avons pas respecté une obligation légale d'information précontractuelle prévue par la Loi sur la protection du consommateur (RLRQ, c. P-40.1), vous pouvez avoir droit à l'annulation du contrat et au remboursement des sommes payées d'avance pour des services non rendus.</li>
+      <li><strong>Union européenne / EEE :</strong> droit de rétractation de 14 jours pour les contrats conclus à distance, sauf si l'exécution a commencé avec votre accord exprès avant l'expiration de ce délai.</li>
+      <li><strong>Autres pays :</strong> nous appliquons les droits légaux de remboursement prévus par la loi de votre pays.</li>
+    </ul>
+    <h3>Remboursements via App Store / Google Play</h3>
+    <p>Si vous avez souscrit via l'App Store d'Apple ou Google Play, les politiques de remboursement de ces plateformes s'appliquent. TrustManager n'a pas accès à ces transactions et ne peut pas traiter les remboursements directement.</p>
+    <ul>
+      <li>Apple : <a href="https://reportaproblem.apple.com" target="_blank" rel="noreferrer">reportaproblem.apple.com</a></li>
+      <li>Google Play : <a href="https://play.google.com/store" target="_blank" rel="noreferrer">play.google.com/store</a></li>
+    </ul>
+    <h3>Incident de service</h3>
+    <p>En cas d'interruption de service prolongée (plus de 72 heures consécutives) imputable à TrustManager et non à un événement de force majeure, nous offrons un crédit de service proportionnel sur demande à <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a>.</p>
+  </section>
+
+  <section class="doc">
+    <h2>5. Conditions d'utilisation acceptable</h2>
+    <p>Il est interdit de :</p>
+    <ul>
+      <li>Utiliser le service à des fins illégales</li>
+      <li>Accéder aux données d'une autre organisation</li>
+      <li>Contourner les mécanismes de sécurité</li>
+      <li>Tenter d'accéder au code source ou à l'infrastructure</li>
+      <li>Utiliser des robots, scripts ou outils d'automatisation non autorisés</li>
+      <li>Revendre ou sous-licencier le service sans autorisation</li>
+      <li>Surveiller des employés d'une manière contraire aux lois applicables</li>
+      <li>Transmettre des contenus illégaux via la messagerie</li>
+    </ul>
+    <p>La violation de ces conditions peut entraîner la suspension ou la résiliation immédiate du compte.</p>
+  </section>
+
+  <section class="doc">
+    <h2>6. Propriété intellectuelle</h2>
+    <p>TrustManager et ses composants (logiciel, design, marques) sont la propriété de TrustManager ou de ses concédants. Vous bénéficiez d'une licence limitée, non exclusive et non transférable pour utiliser le service selon ces conditions.</p>
+    <h3>Vos données</h3>
+    <p>Vous êtes l'unique propriétaire de vos données. TrustManager n'acquiert aucun droit sur vos données et ne les utilise pas à d'autres fins que la fourniture du service.</p>
+  </section>
+
+  <section class="doc">
+    <h2>7. Résiliation</h2>
+    <h3>Par vous</h3>
+    <p>À tout moment depuis les paramètres du compte ou en écrivant à <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a>. L'accès est maintenu jusqu'à la fin de la période payée.</p>
+    <h3>Par TrustManager</h3>
+    <ul>
+      <li><strong>Pour violation grave :</strong> résiliation immédiate possible, avec notification simultanée et explication écrite dans les 5 jours ouvrables.</li>
+      <li><strong>Sans cause :</strong> préavis de 60 jours. Remboursement au prorata des montants payés d'avance pour services non rendus dans les 15 jours.</li>
+    </ul>
+    <h3>Données après résiliation</h3>
+    <p>Vous disposez de 30 jours après la résiliation pour exporter vos données en format structuré (JSON/CSV). Passé ce délai, les données sont définitivement supprimées, sous réserve des obligations légales de conservation.</p>
+  </section>
+
+  <section class="doc">
+    <h2>8. Limitation de responsabilité</h2>
+    <p>Dans les limites permises par la loi applicable :</p>
+    <p>La responsabilité totale de TrustManager est limitée au montant payé au cours des 3 derniers mois précédant l'événement donnant lieu à la réclamation.</p>
+    <p><strong>TrustManager n'est pas responsable :</strong></p>
+    <ul>
+      <li>Des erreurs dans les données saisies par l'utilisateur</li>
+      <li>Des pénalités fiscales résultant d'informations incorrectes</li>
+      <li>Des dommages indirects, consécutifs ou punitifs</li>
+      <li>Des interruptions dues à des événements de force majeure</li>
+    </ul>
+    <p>Les calculs de paie, T4 et RL-1 sont fournis à titre indicatif. L'employeur demeure seul responsable de leur exactitude et de leur transmission aux autorités.</p>
+    <p>Ces limitations ne s'appliquent pas dans les cas où la loi de votre pays ne permet pas de telles exclusions.</p>
+  </section>
+
+  <section class="doc">
+    <h2>9. Disponibilité du service</h2>
+    <p>TrustManager s'efforce de maintenir une disponibilité élevée mais ne garantit pas un service ininterrompu. Des maintenances planifiées sont annoncées avec un préavis raisonnable.</p>
+  </section>
+
+  <section class="doc">
+    <h2>10. Force majeure</h2>
+    <p>TrustManager n'est pas responsable des retards ou inexécutions résultant d'événements hors de son contrôle raisonnable (catastrophes naturelles, pannes d'infrastructure Internet, décisions gouvernementales, cyberattaques).</p>
+  </section>
+
+  <section class="doc">
+    <h2>11. App Store Apple — Tiers bénéficiaire</h2>
+    <p>Si vous avez téléchargé l'application depuis l'App Store d'Apple, vous reconnaissez qu'Apple n'est pas partie aux présentes conditions et n'a aucune obligation de fournir de services de maintenance ou de support. En cas de réclamation d'un tiers selon laquelle l'application enfreint ses droits de propriété intellectuelle, Apple n'est pas responsable de l'enquête, de la défense, du règlement ou de la décharge d'une telle réclamation. Apple et ses filiales sont tiers bénéficiaires des présentes conditions et, dès votre acceptation, Apple aura le droit de les faire respecter à votre encontre.</p>
+  </section>
+
+  <section class="doc">
+    <h2>12. Modifications</h2>
+    <p>TrustManager peut mettre à jour ces conditions avec un préavis de 30 jours transmis par courriel. La poursuite de l'utilisation après cette date vaut acceptation. Si vous n'acceptez pas les modifications, vous pouvez résilier votre abonnement avant leur entrée en vigueur.</p>
+  </section>
+
+  <section class="doc">
+    <h2>13. Contact</h2>
+    <p>Pour toute question concernant ces conditions : <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a> · <a href="https://trustmanager.app">trustmanager.app</a></p>
+  </section>
+
+  <div class="contact">
+    <h3>Une question sur ces conditions ?</h3>
+    <p style="color:var(--text-dim);font-size:14px;">Notre équipe est disponible par courriel.</p>
+    <a href="mailto:contact@trustmanager.app" class="btn">Nous contacter</a>
+  </div>
+</article>
+
+<!-- ═══════════════════ EN ═══════════════════ -->
+<article data-lang="en">
+  <div class="hero">
+    <h1>Terms of Service</h1>
+    <div class="meta"><span>Version 2026.2</span><span>·</span><span>Last updated: April 10, 2026</span></div>
+  </div>
+
+  <div class="warn-banner">
+    <div class="icon">⚠️</div>
+    <p>By accessing or using TrustManager, you agree to be bound by these Terms. If you do not agree, you must not use the service.</p>
+  </div>
+
+  <section class="doc">
+    <h2>1. The parties</h2>
+    <p><strong>Provider:</strong> TrustManager ("we", "us", "our")<br>
+    <strong>Customer:</strong> any person or organization using the service</p>
+    <p>These Terms are governed by the laws applicable in your country of residence. For users in Quebec (Canada), they are governed by Quebec and Canadian law.</p>
+  </section>
+
+  <section class="doc">
+    <h2>2. The service</h2>
+    <p>TrustManager is a SaaS team management platform offering: GPS time tracking with photo verification, payroll management, invoicing, team scheduling, and an integrated AI assistant.</p>
+    <p>TrustManager is a technology tool only. It does not constitute legal, accounting, or tax advice. The employer remains solely responsible for compliance with applicable labor laws and tax obligations.</p>
+  </section>
+
+  <section class="doc">
+    <h2>3. Subscriptions and payment</h2>
+    <p>Plans (in CAD, plus applicable taxes):</p>
+    <div class="plans-grid">
+      <div class="plan-card"><div class="name">Starter</div><div class="price">$29/mo</div><div class="annual">$24/mo annual</div></div>
+      <div class="plan-card"><div class="name">Pro</div><div class="price">$69/mo</div><div class="annual">$57/mo annual</div></div>
+      <div class="plan-card"><div class="name">Business</div><div class="price">$149/mo</div><div class="annual">$124/mo annual</div></div>
+      <div class="plan-card"><div class="name">Enterprise</div><div class="price">$299/mo</div><div class="annual">$249/mo annual</div></div>
+    </div>
+    <p>Additional members beyond plan limit: <strong>$3/member/month</strong>.</p>
+    <ul>
+      <li>Subscriptions automatically renew at the end of each billing period unless canceled.</li>
+      <li>Annual subscriptions auto-renew unless canceled at least 24 hours before the renewal date.</li>
+    </ul>
+    <h3>Free trial</h3>
+    <p>Pro and Business plans include a 30-day free trial. A valid payment method is required. Nothing is charged during the trial. After the trial, billing starts automatically unless you cancel beforehand.</p>
+  </section>
+
+  <section class="doc">
+    <h2>4. Refund policy</h2>
+    <h3>No refunds — general rule</h3>
+    <p>Subscriptions are non-refundable once the billing period has begun. By subscribing, you acknowledge that you have been informed of and accept this policy.</p>
+    <h3>Mandatory legal exceptions</h3>
+    <p>Notwithstanding the above, we honor statutory refund rights applicable in your country of residence, including:</p>
+    <ul>
+      <li><strong>Quebec (Canada):</strong> If we fail to meet a legal pre-contractual information obligation under the Consumer Protection Act (CQLR, c. P-40.1), you may be entitled to cancel the contract and receive a refund for prepaid unused services.</li>
+      <li><strong>EU/EEA:</strong> 14-day right of withdrawal for distance contracts, unless performance has begun with your express consent before that period expires.</li>
+      <li><strong>Other countries:</strong> We comply with statutory refund rights under your local law.</li>
+    </ul>
+    <h3>App Store / Google Play purchases</h3>
+    <p>If you subscribed via the Apple App Store or Google Play, the refund policies of those platforms apply. TrustManager cannot process refunds for purchases made through these platforms.</p>
+    <ul>
+      <li>Apple: <a href="https://reportaproblem.apple.com" target="_blank" rel="noreferrer">reportaproblem.apple.com</a></li>
+      <li>Google Play: <a href="https://play.google.com/store" target="_blank" rel="noreferrer">play.google.com/store</a></li>
+    </ul>
+    <h3>Service interruption credit</h3>
+    <p>In the event of an outage exceeding 72 consecutive hours attributable to TrustManager (and not force majeure), we will issue a proportional service credit upon request at <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a>.</p>
+  </section>
+
+  <section class="doc">
+    <h2>5. Acceptable use</h2>
+    <p>You must not:</p>
+    <ul>
+      <li>Use the service for any unlawful purpose</li>
+      <li>Access another organization's data</li>
+      <li>Circumvent security mechanisms</li>
+      <li>Attempt to access source code or infrastructure</li>
+      <li>Use unauthorized bots or automation tools</li>
+      <li>Resell or sublicense the service without authorization</li>
+      <li>Monitor employees in a manner contrary to applicable law</li>
+      <li>Transmit illegal content through the messaging feature</li>
+    </ul>
+    <p>Violations may result in immediate suspension or termination.</p>
+  </section>
+
+  <section class="doc">
+    <h2>6. Intellectual property</h2>
+    <p>TrustManager and its components are the property of TrustManager or its licensors. You receive a limited, non-exclusive, non-transferable license to use the service.</p>
+    <h3>Your data</h3>
+    <p>You own your data. TrustManager acquires no ownership rights over your data and does not use it for any purpose other than providing the service.</p>
+  </section>
+
+  <section class="doc">
+    <h2>7. Termination</h2>
+    <h3>By you</h3>
+    <p>At any time from account settings or by writing to <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a>. Access continues until the end of the paid period.</p>
+    <h3>By TrustManager</h3>
+    <ul>
+      <li><strong>Material breach:</strong> immediate termination possible, with simultaneous notification.</li>
+      <li><strong>Without cause:</strong> 60 days' written notice. Pro-rata refund for prepaid unused services within 15 days.</li>
+    </ul>
+    <h3>Data after termination</h3>
+    <p>You have 30 days after termination to export your data (JSON/CSV). After this period, data is permanently deleted, subject to legal retention obligations.</p>
+  </section>
+
+  <section class="doc">
+    <h2>8. Limitation of liability</h2>
+    <p>To the maximum extent permitted by applicable law:</p>
+    <p>TrustManager's total liability is limited to the amount paid in the 3 months preceding the claim.</p>
+    <p><strong>TrustManager is not liable for:</strong></p>
+    <ul>
+      <li>Errors in user-entered data</li>
+      <li>Tax penalties resulting from incorrect information</li>
+      <li>Indirect, consequential, or punitive damages</li>
+      <li>Interruptions due to force majeure events</li>
+    </ul>
+    <p>These limitations do not apply where prohibited by law in your country.</p>
+  </section>
+
+  <section class="doc">
+    <h2>9. Third-party disclaimer (App Store)</h2>
+    <p>If you downloaded the App from Apple's App Store, you acknowledge that Apple is not a party to these Terms and has no obligation to provide any maintenance or support services with respect to the App. In the event of any third-party claim that the App infringes that third party's intellectual property rights, Apple is not responsible for the investigation, defense, settlement, or discharge of any such claim. Apple and Apple's subsidiaries are third-party beneficiaries of these Terms and, upon your acceptance, Apple will have the right to enforce these Terms against you as a third-party beneficiary thereof.</p>
+  </section>
+
+  <section class="doc">
+    <h2>10. Changes to terms</h2>
+    <p>We may update these Terms with 30 days' email notice. Continued use after the effective date constitutes acceptance. You may cancel before changes take effect.</p>
+  </section>
+
+  <section class="doc">
+    <h2>11. Contact</h2>
+    <p><a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a> · <a href="https://trustmanager.app">trustmanager.app</a></p>
+  </section>
+
+  <div class="contact">
+    <h3>Questions about these terms?</h3>
+    <p style="color:var(--text-dim);font-size:14px;">Our team is available by email.</p>
+    <a href="mailto:contact@trustmanager.app" class="btn">Contact us</a>
+  </div>
+</article>
+
+<!-- ═══════════════════ ES ═══════════════════ -->
+<article data-lang="es">
+  <div class="hero">
+    <h1>Términos de servicio</h1>
+    <div class="meta"><span>Versión 2026.2</span><span>·</span><span>Última actualización: 10 de abril de 2026</span></div>
+  </div>
+
+  <div class="warn-banner">
+    <div class="icon">⚠️</div>
+    <p>Al acceder o utilizar TrustManager, usted acepta estos Términos. Si no está de acuerdo, no debe utilizar el servicio.</p>
+  </div>
+
+  <section class="doc">
+    <h2>1. El servicio</h2>
+    <p>TrustManager es una plataforma SaaS de gestión de equipos que ofrece: registro de tiempo con geolocalización y foto, gestión de nóminas, facturación, calendario de equipo y asistente de IA integrado.</p>
+    <p>TrustManager es únicamente una herramienta tecnológica y no constituye asesoramiento legal, contable o fiscal.</p>
+  </section>
+
+  <section class="doc">
+    <h2>2. Suscripciones y pagos</h2>
+    <p>Los planes se renuevan automáticamente hasta su cancelación. Se requiere un método de pago válido. Para los planes Pro y Business, hay un período de prueba gratuito de 30 días.</p>
+    <div class="plans-grid">
+      <div class="plan-card"><div class="name">Starter</div><div class="price">$29/mes</div><div class="annual">$24/mes anual</div></div>
+      <div class="plan-card"><div class="name">Pro</div><div class="price">$69/mes</div><div class="annual">$57/mes anual</div></div>
+      <div class="plan-card"><div class="name">Business</div><div class="price">$149/mes</div><div class="annual">$124/mes anual</div></div>
+      <div class="plan-card"><div class="name">Enterprise</div><div class="price">$299/mes</div><div class="annual">$249/mes anual</div></div>
+    </div>
+  </section>
+
+  <section class="doc">
+    <h2>3. Política de reembolso</h2>
+    <h3>Sin reembolsos — regla general</h3>
+    <p>Las suscripciones no son reembolsables una vez iniciado el período de facturación.</p>
+    <h3>Excepciones legales</h3>
+    <p>Respetamos los derechos legales de reembolso aplicables en su país de residencia, incluyendo el derecho de desistimiento de 14 días en la UE/EEE para contratos a distancia.</p>
+    <h3>Compras a través de App Store / Google Play</h3>
+    <p>Si suscribió a través de la App Store de Apple o Google Play, se aplican las políticas de reembolso de esas plataformas.</p>
+  </section>
+
+  <section class="doc">
+    <h2>4. Propiedad intelectual</h2>
+    <p>Usted es propietario de sus datos. TrustManager no adquiere derechos de propiedad sobre sus datos y no los utiliza para ningún otro propósito que no sea la prestación del servicio.</p>
+  </section>
+
+  <section class="doc">
+    <h2>5. Contacto</h2>
+    <p><a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a> · <a href="https://trustmanager.app">trustmanager.app</a></p>
+  </section>
+
+  <div class="contact">
+    <h3>¿Preguntas sobre estos términos?</h3>
+    <p style="color:var(--text-dim);font-size:14px;">Nuestro equipo está disponible por correo.</p>
+    <a href="mailto:contact@trustmanager.app" class="btn">Contáctenos</a>
+  </div>
+</article>
+
+</main>
+
+<footer>
+  <div>TrustManager · <a href="https://trustmanager.app">trustmanager.app</a> · <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a></div>
+  <div style="margin-top:8px;">
+    <a href="/privacy">Privacy</a> ·
+    <a href="/terms">Terms</a> ·
+    <a href="https://my.trustmanager.app">App</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btns = document.querySelectorAll('[data-lang-btn]');
+    var articles = document.querySelectorAll('[data-lang]');
+    var stored = null;
+    try { stored = localStorage.getItem('tm_lang'); } catch (e) {}
+    var browser = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+    var initial = stored || (['fr', 'en', 'es'].indexOf(browser) >= 0 ? browser : 'fr');
+
+    function setLang(l) {
+      btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang-btn') === l); });
+      articles.forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-lang') === l); });
+      document.documentElement.setAttribute('lang', l);
+      document.title = ({
+        fr: "Conditions d'utilisation · TrustManager",
+        en: 'Terms of Service · TrustManager',
+        es: 'Términos de servicio · TrustManager'
+      })[l];
+      try { localStorage.setItem('tm_lang', l); } catch (e) {}
+    }
+
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.getAttribute('data-lang-btn')); });
+    });
+
+    setLang(initial);
+  })();
+</script>
+
+</body>
+</html>

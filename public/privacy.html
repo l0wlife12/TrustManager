@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0B" />
+  <meta name="robots" content="index, follow" />
+  <title>Politique de confidentialité · TrustManager</title>
+  <meta name="description" content="Politique de confidentialité de TrustManager — conformité Loi 25 (QC), RGPD (UE), CCPA (USA). FR · EN · ES." />
+  <link rel="canonical" href="https://trustmanager.app/privacy" />
+  <meta property="og:title" content="Politique de confidentialité · TrustManager" />
+  <meta property="og:description" content="Vos données ne sont jamais vendues. Contrôle complet. Conformité Loi 25, RGPD, CCPA." />
+  <meta property="og:url" content="https://trustmanager.app/privacy" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0B;
+      --bg-elev: #121214;
+      --bg-card: #17171A;
+      --border: rgba(255,255,255,0.08);
+      --text: #E8E8EA;
+      --text-dim: #94949B;
+      --text-muted: #64646B;
+      --accent: #007AFF;
+      --accent-soft: rgba(0,122,255,0.12);
+      --success: #30D158;
+      --danger: #FF453A;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FAFAFA;
+        --bg-elev: #FFFFFF;
+        --bg-card: #FFFFFF;
+        --border: rgba(0,0,0,0.08);
+        --text: #0A0A0B;
+        --text-dim: #48484A;
+        --text-muted: #8E8E93;
+        --accent-soft: rgba(0,122,255,0.08);
+      }
+    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,10,11,0.82);
+      backdrop-filter: saturate(180%) blur(18px);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    @media (prefers-color-scheme: light) {
+      .topbar { background: rgba(255,255,255,0.82); }
+    }
+    .topbar-inner {
+      max-width: 880px; margin: 0 auto;
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 15px; color: var(--text);
+    }
+    .brand-dot {
+      width: 26px; height: 26px; border-radius: 8px;
+      background: linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%);
+      display: grid; place-items: center; color: white; font-size: 13px; font-weight: 800;
+    }
+    .lang-picker { display: flex; gap: 4px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 3px; }
+    .lang-picker button {
+      background: transparent; color: var(--text-muted);
+      border: none; padding: 6px 12px; border-radius: 7px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+      cursor: pointer; transition: all 150ms ease;
+      min-height: 32px;
+    }
+    .lang-picker button.active { background: var(--accent); color: white; }
+    .lang-picker button:not(.active):hover { color: var(--text); background: var(--bg-elev); }
+
+    /* Hero */
+    main { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 40px);
+      font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.15; margin-bottom: 10px;
+    }
+    .hero .meta {
+      color: var(--text-muted); font-size: 13px;
+      display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 28px;
+    }
+    .hero .meta span { display: inline-flex; align-items: center; gap: 6px; }
+
+    /* Summary card */
+    .summary {
+      background: linear-gradient(135deg, var(--accent-soft), transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 36px;
+    }
+    .summary-title { font-weight: 600; font-size: 14px; color: var(--accent); margin-bottom: 10px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .summary ul { list-style: none; display: grid; gap: 8px; }
+    .summary li { display: flex; gap: 10px; font-size: 14.5px; color: var(--text-dim); line-height: 1.5; }
+    .summary li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+
+    /* Sections */
+    section.doc { margin-top: 32px; }
+    section.doc h2 {
+      font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+      margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    section.doc h3 { font-size: 14px; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin: 18px 0 8px; }
+    section.doc p { color: var(--text-dim); font-size: 15px; margin-bottom: 12px; }
+    section.doc ul { margin: 8px 0 14px 22px; color: var(--text-dim); font-size: 15px; }
+    section.doc li { margin-bottom: 6px; line-height: 1.6; }
+    section.doc strong { color: var(--text); font-weight: 600; }
+
+    .retention-table {
+      width: 100%; border-collapse: collapse;
+      margin-top: 8px; font-size: 14px;
+      border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
+    .retention-table th, .retention-table td {
+      text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border);
+    }
+    .retention-table th { background: var(--bg-card); font-weight: 600; color: var(--text); font-size: 13px; }
+    .retention-table td { color: var(--text-dim); }
+    .retention-table tr:last-child td { border-bottom: none; }
+
+    /* Contact card */
+    .contact {
+      margin-top: 48px; padding: 24px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); text-align: center;
+    }
+    .contact h3 { font-size: 16px; color: var(--text); margin-bottom: 8px; text-transform: none; letter-spacing: 0; font-weight: 600; }
+    .contact a.btn {
+      display: inline-block; margin-top: 12px;
+      background: var(--accent); color: white;
+      padding: 11px 22px; border-radius: 10px;
+      font-weight: 600; font-size: 14px;
+      min-height: 44px; line-height: 22px;
+    }
+    .contact a.btn:hover { text-decoration: none; opacity: 0.92; }
+
+    /* Footer */
+    footer {
+      max-width: 720px; margin: 40px auto 0;
+      padding: 20px; border-top: 1px solid var(--border);
+      color: var(--text-muted); font-size: 12.5px; text-align: center;
+    }
+    footer a { color: var(--text-muted); margin: 0 8px; }
+
+    /* Language visibility */
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+
+    /* Mobile optimizations */
+    @media (max-width: 540px) {
+      main { padding: 24px 16px 60px; }
+      .retention-table { font-size: 13px; }
+      .retention-table th, .retention-table td { padding: 9px 10px; }
+      .brand span:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="https://trustmanager.app" class="brand" aria-label="TrustManager">
+      <span class="brand-dot">T</span>
+      <span>TrustManager</span>
+    </a>
+    <div class="lang-picker" role="tablist" aria-label="Language">
+      <button data-lang-btn="fr" class="active" aria-label="Français">FR</button>
+      <button data-lang-btn="en" aria-label="English">EN</button>
+      <button data-lang-btn="es" aria-label="Español">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════ FR ═══════════════════ -->
+<article data-lang="fr" class="active">
+  <div class="hero">
+    <h1>Politique de confidentialité</h1>
+    <div class="meta">
+      <span>Version 2026.2</span>
+      <span>·</span>
+      <span>Dernière mise à jour : 10 avril 2026</span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-title">Résumé</div>
+    <ul>
+      <li>Vos données servent uniquement à vous fournir le service.</li>
+      <li>Vos données ne sont jamais vendues à des tiers.</li>
+      <li>Aucune publicité ciblée. Aucun suivi publicitaire.</li>
+      <li>Vous contrôlez vos données à tout moment.</li>
+    </ul>
+  </div>
+
+  <section class="doc">
+    <h2>1. Qui sommes-nous ?</h2>
+    <p>TrustManager (« nous », « notre ») est une application de gestion d'équipe permettant aux employeurs de gérer horaires, pointage, paie et facturation.</p>
+    <p><strong>Contact :</strong> <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a><br>
+    <strong>Site web :</strong> <a href="https://trustmanager.app">trustmanager.app</a></p>
+    <p>Pour les utilisateurs au Québec (Canada) : TrustManager désigne un responsable de la protection des renseignements personnels conformément à la Loi 25. Pour toute demande relative à vos données, écrivez à contact@trustmanager.app.</p>
+    <p><strong>Autorité de surveillance (Québec) :</strong><br>
+    Commission d'accès à l'information (CAI) — <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noreferrer">www.cai.gouv.qc.ca</a> · 1-888-528-7741</p>
+  </section>
+
+  <section class="doc">
+    <h2>2. Données collectées</h2>
+    <p>Nous collectons uniquement les données nécessaires au service :</p>
+
+    <h3>Données de compte</h3>
+    <ul>
+      <li>Nom, adresse courriel, numéro de téléphone</li>
+      <li>Rôle dans l'organisation (admin, employé, secrétaire, sous-traitant)</li>
+      <li>Langue et préférences d'affichage</li>
+    </ul>
+
+    <h3>Données de travail</h3>
+    <ul>
+      <li>Heures travaillées et horaires</li>
+      <li>Taux horaire (saisi par l'employeur)</li>
+      <li>Rapports de présence</li>
+    </ul>
+
+    <h3>Données de localisation</h3>
+    <ul>
+      <li>Position GPS enregistrée <strong>lors du pointage uniquement</strong></li>
+      <li>La localisation est collectée avec votre consentement explicite</li>
+      <li>Elle n'est pas collectée en arrière-plan</li>
+      <li>Vous pouvez retirer votre consentement à tout moment</li>
+    </ul>
+
+    <h3>Données biométriques (Québec — Loi 25)</h3>
+    <ul>
+      <li>Les photographies prises lors du pointage sont considérées comme des données biométriques au sens de la Loi 25</li>
+      <li>Leur collecte nécessite votre consentement explicite, obtenu lors de la première connexion</li>
+      <li>Ce consentement est révocable à tout moment</li>
+    </ul>
+
+    <h3>Numéro d'assurance sociale (Canada uniquement, optionnel)</h3>
+    <ul>
+      <li>Collecté uniquement si nécessaire pour la génération des formulaires T4 et RL-1</li>
+      <li>Chiffré et non affiché après saisie</li>
+    </ul>
+
+    <h3>Données de paiement</h3>
+    <ul>
+      <li>Traitées par un prestataire certifié PCI-DSS</li>
+      <li>Nous ne stockons aucun numéro de carte bancaire</li>
+    </ul>
+
+    <h3>Données techniques</h3>
+    <ul>
+      <li>Journaux d'activité (logs) pour la sécurité</li>
+      <li>Données de crash et de performance (anonymisées)</li>
+    </ul>
+  </section>
+
+  <section class="doc">
+    <h2>3. Utilisation des données</h2>
+    <p><strong>Nous utilisons vos données pour :</strong></p>
+    <ul>
+      <li>Vous fournir les fonctionnalités de l'application</li>
+      <li>Calculer les heures et la rémunération</li>
+      <li>Générer les documents légaux (paie, formulaires fiscaux)</li>
+      <li>Assurer la sécurité du service</li>
+      <li>Vous contacter pour le support technique</li>
+    </ul>
+    <p><strong>Nous n'utilisons pas vos données pour :</strong></p>
+    <ul>
+      <li>La publicité ou le marketing ciblé</li>
+      <li>La vente à des tiers</li>
+      <li>L'entraînement de modèles d'intelligence artificielle tiers</li>
+      <li>Le profilage commercial</li>
+    </ul>
+    <p>L'assistant IA intégré dans TrustManager accède à vos données opérationnelles pour répondre à vos questions. Ces données ne sont pas utilisées pour entraîner des modèles externes.</p>
+  </section>
+
+  <section class="doc">
+    <h2>4. Partage des données</h2>
+    <p>Vos données peuvent être partagées uniquement :</p>
+    <ul>
+      <li>Avec les prestataires techniques qui nous aident à fournir le service, liés par des obligations de confidentialité</li>
+      <li>Lorsque la loi l'exige (autorités judiciaires ou fiscales)</li>
+      <li>Pour protéger les droits, la sécurité ou les biens de TrustManager ou de tiers, en cas d'urgence</li>
+    </ul>
+    <p><strong>Nous ne vendons jamais vos données.</strong></p>
+  </section>
+
+  <section class="doc">
+    <h2>5. Durée de conservation</h2>
+    <p>Les données sont conservées selon les durées suivantes, puis supprimées ou anonymisées automatiquement :</p>
+    <table class="retention-table">
+      <thead><tr><th>Type de donnée</th><th>Durée</th></tr></thead>
+      <tbody>
+        <tr><td>Données de compte</td><td>Durée de l'abonnement + 2 ans</td></tr>
+        <tr><td>Données de paie et fiscales</td><td>7 ans (obligation légale Canada)</td></tr>
+        <tr><td>Photos de pointage</td><td>1 an</td></tr>
+        <tr><td>Données GPS de pointage</td><td>60 jours</td></tr>
+        <tr><td>Journaux d'activité</td><td>90 jours</td></tr>
+        <tr><td>Données après résiliation</td><td>30 jours (export disponible)</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;">Ces durées sont automatiquement appliquées par nos systèmes.</p>
+  </section>
+
+  <section class="doc">
+    <h2>6. Vos droits</h2>
+    <p>Selon votre pays de résidence, vous disposez de certains ou de tous les droits suivants :</p>
+    <ul>
+      <li><strong>Accès</strong> — Obtenir une copie de vos données personnelles</li>
+      <li><strong>Rectification</strong> — Corriger des données inexactes ou incomplètes</li>
+      <li><strong>Suppression</strong> — Demander l'effacement de vos données</li>
+      <li><strong>Portabilité</strong> — Recevoir vos données dans un format structuré (JSON ou CSV) — applicable notamment au Québec depuis septembre 2024 (Loi 25)</li>
+      <li><strong>Retrait du consentement</strong> — Retirer votre consentement à la collecte GPS ou biométrique à tout moment via l'application</li>
+    </ul>
+    <p>Pour exercer vos droits : <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a> — délai de réponse : 30 jours.</p>
+  </section>
+
+  <section class="doc">
+    <h2>7. Sécurité</h2>
+    <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données : chiffrement des données en transit et au repos, contrôle d'accès, isolation des données par organisation.</p>
+    <p>En cas d'incident de confidentialité présentant un risque de préjudice sérieux, nous notifions les autorités compétentes et les personnes concernées conformément aux lois applicables.</p>
+  </section>
+
+  <section class="doc">
+    <h2>8. Mineurs</h2>
+    <p>TrustManager est destiné à une utilisation professionnelle. Le service n'est pas destiné aux personnes de moins de 16 ans.</p>
+  </section>
+
+  <section class="doc">
+    <h2>9. Modifications</h2>
+    <p>Toute modification substantielle à cette politique fait l'objet d'un avis transmis à votre adresse courriel avec un préavis de 30 jours avant son entrée en vigueur.</p>
+  </section>
+
+  <section class="doc">
+    <h2>10. Contact et plaintes</h2>
+    <p>Pour toute question : <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a></p>
+    <ul>
+      <li><strong>Québec (Canada) :</strong> Commission d'accès à l'information (CAI) — <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noreferrer">cai.gouv.qc.ca</a></li>
+      <li><strong>Union européenne :</strong> Votre autorité de protection des données locale (ex. CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noreferrer">cnil.fr</a>)</li>
+      <li><strong>États-Unis (Californie) :</strong> California Privacy Protection Agency — <a href="https://www.cppa.ca.gov" target="_blank" rel="noreferrer">cppa.ca.gov</a></li>
+    </ul>
+  </section>
+
+  <div class="contact">
+    <h3>Une question sur vos données ?</h3>
+    <p style="color:var(--text-dim);font-size:14px;">Notre équipe répond sous 30 jours.</p>
+    <a href="mailto:contact@trustmanager.app" class="btn">Nous contacter</a>
+  </div>
+</article>
+
+<!-- ═══════════════════ EN ═══════════════════ -->
+<article data-lang="en">
+  <div class="hero">
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>Version 2026.2</span>
+      <span>·</span>
+      <span>Last updated: April 10, 2026</span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-title">Summary</div>
+    <ul>
+      <li>Your data is used only to provide the service.</li>
+      <li>Your data is never sold to third parties.</li>
+      <li>No targeted advertising. No ad tracking.</li>
+      <li>You control your data at all times.</li>
+    </ul>
+  </div>
+
+  <section class="doc">
+    <h2>1. Who we are</h2>
+    <p>TrustManager ("we", "us", "our") is a team management application that helps employers manage schedules, time tracking, payroll, and invoicing.</p>
+    <p><strong>Contact:</strong> <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a><br>
+    <strong>Website:</strong> <a href="https://trustmanager.app">trustmanager.app</a></p>
+  </section>
+
+  <section class="doc">
+    <h2>2. Data we collect</h2>
+    <p>We collect only data necessary to provide the service:</p>
+
+    <h3>Account data</h3>
+    <ul>
+      <li>Name, email address, phone number</li>
+      <li>Role in your organization (admin, employee, secretary, subcontractor)</li>
+      <li>Language and display preferences</li>
+    </ul>
+
+    <h3>Work data</h3>
+    <ul>
+      <li>Hours worked and schedules</li>
+      <li>Hourly rate (entered by employer)</li>
+      <li>Attendance reports</li>
+    </ul>
+
+    <h3>Location data</h3>
+    <ul>
+      <li>GPS location recorded <strong>at clock-in only</strong> (not background)</li>
+      <li>Collected with your explicit consent</li>
+      <li>You can withdraw consent at any time</li>
+    </ul>
+
+    <h3>Biometric data (where applicable)</h3>
+    <ul>
+      <li>Clock-in photos may be considered biometric data under applicable local law</li>
+      <li>Their collection requires your explicit consent</li>
+      <li>This consent is revocable at any time</li>
+    </ul>
+
+    <h3>Social insurance / tax ID (optional, Canada only)</h3>
+    <ul>
+      <li>Collected only when needed for tax documents (T4, RL-1)</li>
+      <li>Encrypted and not displayed after entry</li>
+    </ul>
+
+    <h3>Payment data</h3>
+    <ul>
+      <li>Processed by a PCI-DSS certified provider</li>
+      <li>We do not store card numbers</li>
+    </ul>
+
+    <h3>Technical data</h3>
+    <ul>
+      <li>Activity logs for security</li>
+      <li>Crash and performance data (anonymized)</li>
+    </ul>
+  </section>
+
+  <section class="doc">
+    <h2>3. How we use your data</h2>
+    <p><strong>We use your data to:</strong></p>
+    <ul>
+      <li>Provide the application's features</li>
+      <li>Calculate hours and compensation</li>
+      <li>Generate payroll and tax documents</li>
+      <li>Ensure service security</li>
+      <li>Provide technical support</li>
+    </ul>
+    <p><strong>We do not use your data for:</strong></p>
+    <ul>
+      <li>Targeted advertising or marketing</li>
+      <li>Sale to third parties</li>
+      <li>Training third-party AI models</li>
+      <li>Commercial profiling</li>
+    </ul>
+  </section>
+
+  <section class="doc">
+    <h2>4. Data sharing</h2>
+    <p>Your data may be shared only:</p>
+    <ul>
+      <li>With technical service providers helping us deliver the service, bound by confidentiality obligations</li>
+      <li>When required by law (courts, tax authorities)</li>
+      <li>To protect the rights, safety, or property of TrustManager or others in emergencies</li>
+    </ul>
+    <p><strong>We never sell your data.</strong></p>
+  </section>
+
+  <section class="doc">
+    <h2>5. Data retention</h2>
+    <p>Data is retained for the following periods, then automatically deleted or anonymized:</p>
+    <table class="retention-table">
+      <thead><tr><th>Data type</th><th>Retention</th></tr></thead>
+      <tbody>
+        <tr><td>Account data</td><td>Duration of subscription + 2 years</td></tr>
+        <tr><td>Payroll and tax data</td><td>7 years (legal obligation — Canada)</td></tr>
+        <tr><td>Clock-in photos</td><td>1 year</td></tr>
+        <tr><td>GPS clock-in data</td><td>60 days</td></tr>
+        <tr><td>Activity logs</td><td>90 days</td></tr>
+        <tr><td>Data after cancellation</td><td>30 days (export available)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="doc">
+    <h2>6. Your rights</h2>
+    <ul>
+      <li><strong>Access</strong> — Obtain a copy of your personal data</li>
+      <li><strong>Rectification</strong> — Correct inaccurate or incomplete data</li>
+      <li><strong>Deletion</strong> — Request erasure of your data</li>
+      <li><strong>Portability</strong> — Receive your data in a structured format (JSON or CSV)</li>
+      <li><strong>Withdraw consent</strong> — Withdraw consent to GPS or biometric collection at any time via the app</li>
+    </ul>
+    <p>To exercise your rights: <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a> — response time: 30 days.</p>
+  </section>
+
+  <section class="doc">
+    <h2>7. Security</h2>
+    <p>We implement appropriate technical and organizational measures to protect your data: encryption in transit and at rest, access controls, and per-organization data isolation.</p>
+    <p>In the event of a data breach presenting a serious risk of harm, we will notify relevant authorities and affected individuals in accordance with applicable law.</p>
+  </section>
+
+  <section class="doc">
+    <h2>8. Children</h2>
+    <p>TrustManager is intended for professional use only. The service is not directed to persons under 16 years of age.</p>
+  </section>
+
+  <section class="doc">
+    <h2>9. Changes</h2>
+    <p>Any material changes to this policy will be communicated to your registered email address with 30 days' notice before taking effect.</p>
+  </section>
+
+  <section class="doc">
+    <h2>10. Contact and complaints</h2>
+    <p>For any questions: <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a></p>
+    <ul>
+      <li><strong>EU/EEA:</strong> Your local data protection authority (e.g., CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noreferrer">cnil.fr</a> for France)</li>
+      <li><strong>California (USA):</strong> California Privacy Protection Agency — <a href="https://www.cppa.ca.gov" target="_blank" rel="noreferrer">cppa.ca.gov</a></li>
+      <li><strong>Quebec (Canada):</strong> Commission d'accès à l'information (CAI) — <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noreferrer">cai.gouv.qc.ca</a></li>
+    </ul>
+  </section>
+
+  <div class="contact">
+    <h3>Questions about your data?</h3>
+    <p style="color:var(--text-dim);font-size:14px;">Our team responds within 30 days.</p>
+    <a href="mailto:contact@trustmanager.app" class="btn">Contact us</a>
+  </div>
+</article>
+
+<!-- ═══════════════════ ES ═══════════════════ -->
+<article data-lang="es">
+  <div class="hero">
+    <h1>Política de privacidad</h1>
+    <div class="meta">
+      <span>Versión 2026.2</span>
+      <span>·</span>
+      <span>Última actualización: 10 de abril de 2026</span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-title">Resumen</div>
+    <ul>
+      <li>Sus datos se utilizan únicamente para prestar el servicio.</li>
+      <li>Sus datos nunca se venden a terceros.</li>
+      <li>Sin publicidad dirigida. Sin seguimiento publicitario.</li>
+      <li>Usted controla sus datos en todo momento.</li>
+    </ul>
+  </div>
+
+  <section class="doc">
+    <h2>1. Quiénes somos</h2>
+    <p>TrustManager ("nosotros", "nuestro") es una aplicación de gestión de equipos que ayuda a los empleadores a gestionar horarios, registro de tiempo, nómina y facturación.</p>
+    <p><strong>Contacto:</strong> <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a><br>
+    <strong>Sitio web:</strong> <a href="https://trustmanager.app">trustmanager.app</a></p>
+  </section>
+
+  <section class="doc">
+    <h2>2. Datos que recopilamos</h2>
+    <p>Recopilamos únicamente los datos necesarios para prestar el servicio:</p>
+
+    <h3>Datos de cuenta</h3>
+    <ul>
+      <li>Nombre, dirección de correo electrónico, número de teléfono</li>
+      <li>Rol en su organización (administrador, empleado, secretario, subcontratista)</li>
+      <li>Preferencias de idioma y visualización</li>
+    </ul>
+
+    <h3>Datos de trabajo</h3>
+    <ul>
+      <li>Horas trabajadas y horarios</li>
+      <li>Tarifa por hora (introducida por el empleador)</li>
+      <li>Informes de asistencia</li>
+    </ul>
+
+    <h3>Datos de ubicación</h3>
+    <ul>
+      <li>Ubicación GPS registrada <strong>solo al fichar</strong> (no en segundo plano)</li>
+      <li>Recopilada con su consentimiento explícito</li>
+      <li>Puede retirar su consentimiento en cualquier momento</li>
+    </ul>
+
+    <h3>Datos biométricos (donde aplique)</h3>
+    <ul>
+      <li>Las fotos de fichaje pueden considerarse datos biométricos según la ley local aplicable</li>
+      <li>Su recopilación requiere su consentimiento explícito</li>
+      <li>Este consentimiento es revocable en cualquier momento</li>
+    </ul>
+
+    <h3>Datos de pago</h3>
+    <ul>
+      <li>Procesados por un proveedor certificado PCI-DSS</li>
+      <li>No almacenamos números de tarjeta</li>
+    </ul>
+  </section>
+
+  <section class="doc">
+    <h2>3. Uso de los datos</h2>
+    <p><strong>Utilizamos sus datos para:</strong></p>
+    <ul>
+      <li>Proporcionar las funcionalidades de la aplicación</li>
+      <li>Calcular horas y remuneración</li>
+      <li>Generar documentos de nómina e impuestos</li>
+      <li>Garantizar la seguridad del servicio</li>
+    </ul>
+    <p><strong>No utilizamos sus datos para:</strong></p>
+    <ul>
+      <li>Publicidad o marketing dirigido</li>
+      <li>Venta a terceros</li>
+      <li>Entrenamiento de modelos de IA externos</li>
+      <li>Perfilado comercial</li>
+    </ul>
+  </section>
+
+  <section class="doc">
+    <h2>4. Conservación de datos</h2>
+    <p>Los datos se conservan durante los siguientes períodos, luego se eliminan o anonimizan automáticamente:</p>
+    <table class="retention-table">
+      <thead><tr><th>Tipo de dato</th><th>Período</th></tr></thead>
+      <tbody>
+        <tr><td>Datos de cuenta</td><td>Duración de la suscripción + 2 años</td></tr>
+        <tr><td>Datos de nómina e impuestos</td><td>7 años (obligación legal)</td></tr>
+        <tr><td>Fotos de fichaje</td><td>1 año</td></tr>
+        <tr><td>Datos GPS de fichaje</td><td>60 días</td></tr>
+        <tr><td>Registros de actividad</td><td>90 días</td></tr>
+        <tr><td>Datos tras cancelación</td><td>30 días (exportación disponible)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="doc">
+    <h2>5. Sus derechos</h2>
+    <p>Según su país de residencia, dispone de los siguientes derechos: Acceso · Rectificación · Supresión · Portabilidad · Retirada del consentimiento.</p>
+    <p>Para ejercer sus derechos: <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a></p>
+    <p><strong>UE/EEE:</strong> Su autoridad local de protección de datos.</p>
+  </section>
+
+  <div class="contact">
+    <h3>¿Preguntas sobre sus datos?</h3>
+    <p style="color:var(--text-dim);font-size:14px;">Nuestro equipo responde en 30 días.</p>
+    <a href="mailto:contact@trustmanager.app" class="btn">Contáctenos</a>
+  </div>
+</article>
+
+</main>
+
+<footer>
+  <div>TrustManager · <a href="https://trustmanager.app">trustmanager.app</a> · <a href="mailto:contact@trustmanager.app">contact@trustmanager.app</a></div>
+  <div style="margin-top:8px;">
+    <a href="/privacy">Privacy</a> ·
+    <a href="/terms">Terms</a> ·
+    <a href="https://my.trustmanager.app">App</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btns = document.querySelectorAll('[data-lang-btn]');
+    var articles = document.querySelectorAll('[data-lang]');
+    var stored = null;
+    try { stored = localStorage.getItem('tm_lang'); } catch (e) {}
+    var browser = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+    var initial = stored || (['fr', 'en', 'es'].indexOf(browser) >= 0 ? browser : 'fr');
+
+    function setLang(l) {
+      btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang-btn') === l); });
+      articles.forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-lang') === l); });
+      document.documentElement.setAttribute('lang', l);
+      document.title = ({
+        fr: 'Politique de confidentialité · TrustManager',
+        en: 'Privacy Policy · TrustManager',
+        es: 'Política de privacidad · TrustManager'
+      })[l];
+      try { localStorage.setItem('tm_lang', l); } catch (e) {}
+    }
+
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.getAttribute('data-lang-btn')); });
+    });
+
+    setLang(initial);
+  })();
+</script>
+
+</body>
+</html>

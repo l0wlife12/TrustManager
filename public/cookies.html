@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Cookies - TrustManager</title>
+    <style>
+        :root {
+            --color-bg: #fff;
+            --color-bg-secondary: #f8fafc;
+            --color-text: #000000;
+            --color-text-secondary: #000000;
+            --color-border: #e2e8f0;
+            --color-blue: #3b82f6;
+            --color-blue-dark: #1e40af;
+        }
+        
+        [data-theme="dark"] {
+            --color-bg: #0f172a;
+            --color-bg-secondary: #1e293b;
+            --color-text: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-border: #334155;
+            --color-blue: #3b82f6;
+            --color-blue-dark: #1e40af;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--color-blue) 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 1;
+            font-weight: 500;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--color-border);
+            transform: scale(1.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            color: var(--color-text);
+            border-bottom: 3px solid var(--color-blue);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            color: var(--color-text);
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            margin: 15px 0 10px 0;
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+        
+        .intro-box {
+            background: var(--color-bg-secondary);
+            border-left: 4px solid var(--color-blue);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .cookie-type {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .cookie-type h4 {
+            color: var(--color-blue);
+            margin-top: 0;
+        }
+        
+        .cookie-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .cookie-list li {
+            padding: 10px 0 10px 25px;
+            position: relative;
+            color: var(--color-text-secondary);
+        }
+        
+        .cookie-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-blue);
+            font-weight: bold;
+        }
+        
+        .consent-controls {
+            background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg));
+            border: 2px solid var(--color-blue);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .consent-controls h3 {
+            margin-top: 0;
+            color: var(--color-blue);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-accept {
+            background: var(--color-blue);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-accept:hover {
+            background: var(--color-blue-dark);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .btn-reject {
+            background: var(--color-bg-secondary);
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
+        }
+        
+        .btn-reject:hover {
+            border-color: var(--color-text);
+            background: var(--color-border);
+        }
+        
+        .language-selector {
+            margin: 30px 0;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .language-selector button {
+            padding: 8px 16px;
+            margin: 0;
+        }
+        
+        .language-selector button.active {
+            background: var(--color-blue);
+            color: white;
+        }
+        
+        .language-selector button:not(.active) {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+        }
+        
+        .language-content {
+            display: none;
+        }
+        
+        .language-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        footer {
+            background: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-border);
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--color-text-secondary);
+        }
+        
+        a {
+            color: var(--color-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--color-blue-dark);
+            text-decoration: underline;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: var(--color-blue);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        tr:hover {
+            background: var(--color-bg);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+    
+    <header>
+        <h1>🍪 Politique de Cookies</h1>
+        <p>TrustManager - Gestion transparente de vos préférences</p>
+    </header>
+    
+    <div class="container">
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="switchLanguage('fr')">Français</button>
+            <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+            <button class="lang-btn" onclick="switchLanguage('es')">Español</button>
+        </div>
+
+        <!-- FRENCH VERSION -->
+        <div id="lang-fr" class="language-content active">
+            <div class="intro-box">
+                <p>
+                    <strong>TrustManager</strong> utilise des cookies pour améliorer votre expérience sur notre site et comprendre comment vous l'utilisez. 
+                    Cette page vous explique en détail quels cookies nous utilisons, pourquoi et comment gérer vos préférences.
+                </p>
+            </div>
+
+            <h2>Qu'est-ce qu'un cookie?</h2>
+            <p>
+                Un cookie est un petit fichier texte stocké sur votre appareil (ordinateur, tablette, smartphone) lorsque vous visitez notre site. 
+                Les cookies nous permettent de reconnaître votre appareil lors de vos visites ultérieures et de personnaliser votre expérience.
+            </p>
+
+            <h2>Types de cookies utilisés</h2>
+
+            <div class="cookie-type">
+                <h4>📊 Cookies analytiques</h4>
+                <p>Ces cookies nous aident à comprendre comment vous utilisez notre site et à l'améliorer continuellement.</p>
+                <ul class="cookie-list">
+                    <li>Suivi des pages visitées</li>
+                    <li>Durée de la visite</li>
+                    <li>Actions effectuées (clics, soumissions)</li>
+                    <li>Type de navigateur et appareil</li>
+                    <li>Localisation générale (pays/région)</li>
+                </ul>
+                <p><strong>Durée:</strong> Généralement 2 ans</p>
+            </div>
+
+            <div class="cookie-type">
+                <h4>🔧 Cookies fonctionnels</h4>
+                <p>Ces cookies sont essentiels pour que notre site fonctionne correctement. Ils permettent:</p>
+                <ul class="cookie-list">
+                    <li>Mémoriser votre langue préférée</li>
+                    <li>Garder vos préférences d'affichage (mode sombre/clair)</li>
+                    <li>Maintenir votre session utilisateur</li>
+                    <li>Mémoriser vos choix de consentement aux cookies</li>
+                </ul>
+                <p><strong>Durée:</strong> Varie selon le cookie (session ou 1 an)</p>
+            </div>
+
+            <div class="cookie-type">
+                <h4>📍 Cookies de stockage local</h4>
+                <p>Pour améliorer les performances et l'expérience utilisateur:</p>
+                <ul class="cookie-list">
+                    <li>Stockage de votre consentement aux cookies</li>
+                    <li>Sauvegarde des paramètres personnels</li>
+                    <li>Cache des données pour un chargement plus rapide</li>
+                </ul>
+                <p><strong>Durée:</strong> Jusqu'à ce que vous les supprimiez</p>
+            </div>
+
+            <h2>Vos droits concernant les cookies</h2>
+            <p>Vous avez le droit de:</p>
+            <ul class="cookie-list">
+                <li>Accepter ou refuser les cookies à tout moment</li>
+                <li>Modifier vos préférences de cookies</li>
+                <li>Supprimer les cookies stockés via les paramètres de votre navigateur</li>
+                <li>Recevoir une explication sur chaque cookie utilisé</li>
+            </ul>
+
+            <h2>Comment gérer les cookies?</h2>
+            <p>
+                <strong>Via TrustManager:</strong> Vous pouvez gérer vos préférences en utilisant la banneau de consentement 
+                qui apparaît lors de votre première visite ou en bas du site.
+            </p>
+            <p>
+                <strong>Via votre navigateur:</strong> Vous pouvez configurer votre navigateur pour refuser tous les cookies 
+                ou vous notifier quand un cookie est défini. Consultez l'aide de votre navigateur pour plus d'informations.
+            </p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Navigateur</th>
+                            <th>Comment gérer les cookies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Chrome</strong></td>
+                            <td>Paramètres → Confidentialité et sécurité → Cookies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Firefox</strong></td>
+                            <td>Paramètres → Vie privée → Cookies et données de sites</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Safari</strong></td>
+                            <td>Préférences → Confidentialité → Gérer les données du site web</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Edge</strong></td>
+                            <td>Paramètres → Confidentialité → Cookies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Conséquences du refus des cookies</h2>
+            <p>
+                ⚠️ Si vous refusez les cookies analytiques et fonctionnels, vous pourrez toujours utiliser notre site. 
+                Cependant, certaines fonctionnalités pourraient être moins optimisées:
+            </p>
+            <ul class="cookie-list">
+                <li>Votre langue préférée ne sera pas mémorisée</li>
+                <li>Vos paramètres d'affichage seront réinitialisés</li>
+                <li>Nous ne pourrons pas optimiser votre expérience</li>
+            </ul>
+
+            <h2>Conformité légale</h2>
+            <p>
+                TrustManager respecte les réglementations suivantes:
+            </p>
+            <ul class="cookie-list">
+                <li><strong>RGPD</strong> (Union Européenne)</li>
+                <li><strong>Loi 25</strong> (Québec, Canada)</li>
+                <li><strong>CCPA</strong> (Californie, États-Unis)</li>
+            </ul>
+
+            <div class="consent-controls">
+                <h3>Gérer maintenant</h3>
+                <p>Vous pouvez modifier vos préférences de cookies à tout moment en cliquant sur les boutons ci-dessous.</p>
+                <div class="button-group">
+                    <button class="btn-reject" onclick="setCookieConsent('rejected')">Refuser tous les cookies</button>
+                    <button class="btn-accept" onclick="setCookieConsent('accepted')">Accepter tous les cookies</button>
+                </div>
+            </div>
+
+            <h2>Questions?</h2>
+            <p>
+                Si vous avez des questions sur notre politique de cookies ou sur la façon dont nous utilisons les cookies, 
+                veuillez nous contacter via notre <a href="/">page de contact</a>.
+            </p>
+        </div>
+
+        <!-- ENGLISH VERSION -->
+        <div id="lang-en" class="language-content">
+            <div class="intro-box">
+                <p>
+                    <strong>TrustManager</strong> uses cookies to improve your experience on our website and understand how you use it. 
+                    This page explains in detail which cookies we use, why, and how to manage your preferences.
+                </p>
+            </div>
+
+            <h2>What is a Cookie?</h2>
+            <p>
+                A cookie is a small text file stored on your device (computer, tablet, smartphone) when you visit our website. 
+                Cookies allow us to recognize your device on future visits and personalize your experience.
+            </p>
+
+            <h2>Types of Cookies Used</h2>
+
+            <div class="cookie-type">
+                <h4>📊 Analytical Cookies</h4>
+                <p>These cookies help us understand how you use our website and continuously improve it.</p>
+                <ul class="cookie-list">
+                    <li>Tracking pages visited</li>
+                    <li>Visit duration</li>
+                    <li>Actions performed (clicks, submissions)</li>
+                    <li>Browser and device type</li>
+                    <li>General location (country/region)</li>
+                </ul>
+                <p><strong>Duration:</strong> Usually 2 years</p>
+            </div>
+
+            <div class="cookie-type">
+                <h4>🔧 Functional Cookies</h4>
+                <p>These cookies are essential for our website to work properly. They allow:</p>
+                <ul class="cookie-list">
+                    <li>Remember your preferred language</li>
+                    <li>Keep your display preferences (dark/light mode)</li>
+                    <li>Maintain your user session</li>
+                    <li>Remember your cookie consent choices</li>
+                </ul>
+                <p><strong>Duration:</strong> Varies by cookie (session or 1 year)</p>
+            </div>
+
+            <div class="cookie-type">
+                <h4>📍 Local Storage Cookies</h4>
+                <p>To improve performance and user experience:</p>
+                <ul class="cookie-list">
+                    <li>Store your cookie consent</li>
+                    <li>Save personal settings</li>
+                    <li>Cache data for faster loading</li>
+                </ul>
+                <p><strong>Duration:</strong> Until you delete them</p>
+            </div>
+
+            <h2>Your Rights Regarding Cookies</h2>
+            <p>You have the right to:</p>
+            <ul class="cookie-list">
+                <li>Accept or refuse cookies at any time</li>
+                <li>Modify your cookie preferences</li>
+                <li>Delete stored cookies via your browser settings</li>
+                <li>Receive an explanation for each cookie used</li>
+            </ul>
+
+            <h2>How to Manage Cookies?</h2>
+            <p>
+                <strong>Via TrustManager:</strong> You can manage your preferences using the consent banner 
+                that appears on your first visit or at the bottom of the site.
+            </p>
+            <p>
+                <strong>Via your browser:</strong> You can configure your browser to refuse all cookies 
+                or notify you when a cookie is set. Check your browser help for more information.
+            </p>
+
+            <div class="consent-controls">
+                <h3>Manage Now</h3>
+                <p>You can modify your cookie preferences at any time by clicking the buttons below.</p>
+                <div class="button-group">
+                    <button class="btn-reject" onclick="setCookieConsent('rejected')">Reject All Cookies</button>
+                    <button class="btn-accept" onclick="setCookieConsent('accepted')">Accept All Cookies</button>
+                </div>
+            </div>
+
+            <h2>Questions?</h2>
+            <p>
+                If you have any questions about our cookie policy or how we use cookies, 
+                please contact us via our <a href="/">contact page</a>.
+            </p>
+        </div>
+
+        <!-- SPANISH VERSION -->
+        <div id="lang-es" class="language-content">
+            <div class="intro-box">
+                <p>
+                    <strong>TrustManager</strong> utiliza cookies para mejorar su experiencia en nuestro sitio web y comprender cómo lo utiliza. 
+                    Esta página le explica en detalle qué cookies utilizamos, por qué y cómo administrar sus preferencias.
+                </p>
+            </div>
+
+            <h2>¿Qué es una Cookie?</h2>
+            <p>
+                Una cookie es un pequeño archivo de texto almacenado en su dispositivo (ordenador, tableta, teléfono inteligente) cuando visita nuestro sitio web. 
+                Las cookies nos permiten reconocer su dispositivo en visitas futuras y personalizar su experiencia.
+            </p>
+
+            <h2>Tipos de Cookies Utilizadas</h2>
+
+            <div class="cookie-type">
+                <h4>📊 Cookies Analíticos</h4>
+                <p>Estas cookies nos ayudan a entender cómo utiliza nuestro sitio web y mejorarlo continuamente.</p>
+                <ul class="cookie-list">
+                    <li>Seguimiento de páginas visitadas</li>
+                    <li>Duración de la visita</li>
+                    <li>Acciones realizadas (clics, envíos)</li>
+                    <li>Tipo de navegador y dispositivo</li>
+                    <li>Ubicación general (país/región)</li>
+                </ul>
+                <p><strong>Duración:</strong> Generalmente 2 años</p>
+            </div>
+
+            <div class="cookie-type">
+                <h4>🔧 Cookies Funcionales</h4>
+                <p>Estas cookies son esenciales para que nuestro sitio web funcione correctamente. Permiten:</p>
+                <ul class="cookie-list">
+                    <li>Recordar su idioma preferido</li>
+                    <li>Mantener sus preferencias de visualización (modo oscuro/claro)</li>
+                    <li>Mantener su sesión de usuario</li>
+                    <li>Recordar sus opciones de consentimiento de cookies</li>
+                </ul>
+                <p><strong>Duración:</strong> Varía según la cookie (sesión o 1 año)</p>
+            </div>
+
+            <h2>¿Preguntas?</h2>
+            <p>
+                Si tiene alguna pregunta sobre nuestra política de cookies o cómo utilizamos las cookies, 
+                comuníquese con nosotros a través de nuestra <a href="/">página de contacto</a>.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TrustManager. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Tema oscuro/clair
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            updateThemeToggle();
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeToggle();
+        }
+
+        function updateThemeToggle() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+        }
+
+        // Langue
+        function switchLanguage(lang) {
+            document.querySelectorAll('.language-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            localStorage.setItem('cookiePageLanguage', lang);
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('cookiePageLanguage') || 'fr';
+            switchLanguage(savedLang);
+        }
+
+        // Consentement des cookies
+        function setCookieConsent(consent) {
+            localStorage.setItem('trustmanager-cookies-consent', consent);
+            localStorage.setItem('trustmanager-cookies-date', new Date().toISOString());
+            alert(consent === 'accepted' ? '✓ Cookies acceptés. Merci!' : '✓ Cookies refusés.');
+        }
+
+        // Initialisation
+        initTheme();
+        initLanguage();
+    </script>
+</body>
+</html>
